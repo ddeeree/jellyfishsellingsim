@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://6xipnr5xjedb"]
+
+[ext_resource type="Texture2D" uid="uid://baqn7lhyp3fcs" path="res://Untitled182_20261115140833.webp" id="1_p3lty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gga4"]
+radius = 42.0
+
+[sub_resource type="Animation" id="Animation_p3lty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qihfy"]
+resource_name = "bouncejelly"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jiete"]
+_data = {
+&"RESET": SubResource("Animation_p3lty"),
+&"bouncejelly": SubResource("Animation_qihfy")
+}
+
+[node name="Leaf" type="Area2D" unique_id=791854604 groups=["leaf"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=300404397]
+position = Vector2(419.00003, 208.99998)
+scale = Vector2(0.6125, 0.49749997)
+texture = ExtResource("1_p3lty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1041752398]
+position = Vector2(428, 202)
+shape = SubResource("CircleShape2D_6gga4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2138005661]
+libraries/ = SubResource("AnimationLibrary_jiete")
+autoplay = &"bouncejelly"

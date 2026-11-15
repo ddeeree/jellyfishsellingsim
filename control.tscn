@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bq3huk364skd3"]
+
+[ext_resource type="Texture2D" uid="uid://bdl567fntgei3" path="res://underwater-sandy-ripples-stockcake.jpg" id="1_qtu10"]
+[ext_resource type="Texture2D" uid="uid://daqcck74qr0c2" path="res://Untitled182_20261115135628.webp" id="2_ee4bf"]
+[ext_resource type="Script" uid="uid://bsuygxhr05tam" path="res://button.gd" id="3_kbped"]
+
+[node name="Control" type="Control" unique_id=771999758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=803435697]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -15.0
+offset_right = 1168.0
+offset_bottom = 670.0
+texture = ExtResource("1_qtu10")
+
+[node name="Label" type="Label" parent="." unique_id=660484962]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 45.0
+offset_right = 1124.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 51
+text = "help the big bouncy jellyfish *bounce* out of debt by selling small bouncy jellyfish!!!!! simulator"
+autowrap_mode = 2
+uppercase = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1567668088]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 207.0
+offset_right = 1214.0
+offset_bottom = 673.0
+texture = ExtResource("2_ee4bf")
+
+[node name="Button" type="Button" parent="." unique_id=876103713]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 383.0
+offset_right = 559.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 55
+text = "play?"
+script = ExtResource("3_kbped")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
